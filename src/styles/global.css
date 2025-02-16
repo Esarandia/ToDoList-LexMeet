@@ -1,0 +1,73 @@
+:root {
+  --input-background-light: #fff;
+  --input-background-dark: #2e1539;
+  --input-border-light: #ccc;
+  --input-border-dark: #2e1539;
+  --input-color-light: #333;
+  --input-color-dark: #fff;
+  --createButton-bg-light: #f5a623;
+  --createButton-bg-dark: #df7314;
+  --createButton-hover-bg-light: #f0a500;
+  --createButton-hover-bg-dark: #e6610f;
+  --helpButton-color-light: white;
+  --helpButton-color-dark: #fff;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.dark { 
+  background-color: #1f0a29;
+  color: #e0e0e0;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.header.light {
+  background: #ffffff;
+}
+
+.header.dark {
+  background: #2c2c2c;
+}
+
+/* For light mode */
+body.light {
+  --primary-background: #ffffff;
+  --primary-text-color: #333333;
+  --task-background: #f0f0f0;
+  --task-text-color: #333333;
+  --task-border: #ccc;
+}
+
+/* For dark mode */
+body.dark {
+  --primary-background: hsl(0, 0%, 7%);
+  --primary-text-color: #e0e0e0;
+  --task-background: #2e1539;
+  --task-text-color: #e0e0e0;
+  --task-border: #170c1d;
+}
+
+button {
+  cursor: pointer;
+}
+

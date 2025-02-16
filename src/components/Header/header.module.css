@@ -1,0 +1,321 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  position: relative;
+}
+
+/* Background image styling */
+.headerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Background should be behind the content */
+}
+
+/* Background image styles */
+.headerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Logo styles */
+.logo {
+  width: 350px;
+  height: auto;
+}
+
+/* New task form styling */
+.newTaskForm {
+  position: absolute;
+  height: 54px;
+  bottom: -27px;
+  width: 100%;
+  max-width: 736px;
+  display: flex;
+  gap: 8px;
+  padding: 0 1rem;
+}
+
+/* Input field */
+.inputField {
+  height: 100%;
+  flex: 1;
+  padding: 0 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: var(--input-background-light); 
+  border: 1px solid var(--input-border-light); 
+  color: var(--input-color-light); 
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.inputField.dark {
+  background: var(--input-background-dark); 
+  border: 1px solid var(--input-border-dark); 
+  color: var(--input-color-dark); 
+}
+
+.inputField.dark::placeholder {
+  color: #fff; 
+}
+
+/* Create button styling  */
+.createButton {
+  background: var(--createButton-bg-light);
+  color: white;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.createButton:hover {
+  background: var(--createButton-hover-bg-light); 
+}
+
+.createButton.dark {
+  background: var(--createButton-bg-dark);
+  color: #ffffff;
+}
+
+.createButton.dark:hover {
+  background: var(--createButton-hover-bg-dark); 
+}
+
+/* Help modal styling */
+.helpOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.helpModal {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  height: 65%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.helpModal p, h4, .helpModal li {
+  color: #330e49;  
+}
+
+.helpModal h4 {
+  font-size: 24px;  
+  font-weight: bold; 
+  margin-bottom: 20px; 
+}
+
+
+/* Help Modal List Styling */
+.helpList {
+  list-style-type: decimal; 
+  padding-left: 20px; 
+  text-align: left;
+}
+
+.helpList li {
+  margin-bottom: 10px; 
+}
+
+.closeButton { 
+  margin-top: 12px;
+  padding: 12px 35px;
+  border: none;
+  background: #5e1b89;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Modal fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal overlay styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content styling */
+.modalContent {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Input fields in modal */
+.modalContent input, .modalContent textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Default styling for buttons */
+.modalContent button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.saveButton {
+  background: #ec970d; 
+  color: white;
+}
+
+.saveButton:hover {
+  background: #cd8612; 
+}
+
+.cancelButton {
+  background: #5e1b89; 
+  color: white;
+  margin-top: 5px; 
+}
+
+.cancelButton:hover {
+  background: #4e1770;
+}
+
+.modalContent {
+  color: #000000;
+}
+.sidebar {
+  width: 250px;
+  background-color: #fff; 
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  border-right: 2px solid #ccc; 
+}
+
+.darkSidebar {
+  background-color: #2c2c2c; 
+  color: #fff; 
+  border-right: 2px solid #444; 
+}
+
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar Links */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  padding: 8px 10px; 
+  text-decoration: none;
+  color: inherit; 
+  font-size: 16px;
+  margin-bottom: 6px; 
+}
+
+.themeToggleSidebar {
+  margin-top: auto; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  cursor: pointer;
+  padding: 10px 0;
+  padding-left: 10px;
+}
+
+.themeToggleSidebar span {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.themeToggleSidebar:hover {
+  opacity: 0.7;
+}
+
+/* Hamburger icon */
+.sidebarToggle {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+
+.closeSidebarButton {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background: none;
+  border: none;
+  color: #000; 
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.closeSidebarButton.dark {
+  color: #fff; 
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit; 
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.sidebar a:hover {
+  color: #ec970d;
+}
