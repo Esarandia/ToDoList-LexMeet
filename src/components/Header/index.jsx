@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { FaSun, FaMoon, FaPlusCircle, FaGithub, FaInfoCircle, FaGlobe } from 'react-icons/fa'; // Added new icons
+import { FaSun, FaMoon, FaPlusCircle, FaGithub, FaInfoCircle, FaGlobe } from 'react-icons/fa'; 
 import styles from './header.module.css';
-import todoLogo from '../../assets/lexmeetlogo.png'; // Default logo
-import darkLogo from '../../assets/darkmodelogo.png'; // Dark mode logo
-import headerImage from '../../assets/lexmeetheader.png'; // Light mode header image
-import lexmeetHeaderDark from '../../assets/lexmeetheaderdark.png'; // Dark mode header image
+import todoLogo from '../../assets/lexmeetlogo.png'; 
+import darkLogo from '../../assets/darkmodelogo.png'; 
+import headerImage from '../../assets/lexmeetheader.png'; 
+import lexmeetHeaderDark from '../../assets/lexmeetheaderdark.png'; 
 
 export function Header({ handleAddTask, theme, setTheme }) {
   const [title, setTitle] = useState('');
-  const [showHelp, setShowHelp] = useState(false); // Control Help modal visibility
-  const [showModal, setShowModal] = useState(false); // Task modal visibility
+  const [showHelp, setShowHelp] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
   const [dueDate, setDueDate] = useState('');
   const [dueTime, setDueTime] = useState('');
   const [description, setDescription] = useState('');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar toggle state
-  const [isHamburgerHidden, setIsHamburgerHidden] = useState(false); // Hide hamburger icon when clicked
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isHamburgerHidden, setIsHamburgerHidden] = useState(false); 
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -101,7 +101,7 @@ export function Header({ handleAddTask, theme, setTheme }) {
           value={title}
         />
         <button className={`${styles.createButton} ${theme === 'dark' ? styles.dark : ''}`} type="submit">
-          Create <FaPlusCircle size={15} /> {/* Changed the icon to FaPlusCircle */}
+          Create <FaPlusCircle size={15} /> 
         </button>
       </form>
 
@@ -162,7 +162,7 @@ export function Header({ handleAddTask, theme, setTheme }) {
             {/* Cancel Button */}
             <button 
               className={styles.cancelButton} 
-              onClick={() => setShowModal(false)} // Closes the modal without saving
+              onClick={() => setShowModal(false)} 
             >
               Cancel
             </button>
