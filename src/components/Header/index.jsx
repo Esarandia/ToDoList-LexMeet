@@ -73,7 +73,7 @@ export function Header({ handleAddTask, theme, setTheme }) {
         <a href="#" onClick={() => setShowHelp(true)}>
         <FaInfoCircle size={18} /> Help
         </a>
-        <a href="https://https://github.com/Esarandia/ToDoList-LexMeet" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Esarandia/ToDoList-LexMeet" target="_blank" rel="noopener noreferrer">
   <FaGithub size={18} /> GitHub
         </a>
 
