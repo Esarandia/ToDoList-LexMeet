@@ -17,18 +17,18 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-direction: column; /* Adjusting for vertical alignment */
 }
 
-.header div:first-child p {
+.header div:first-child p,
+.header div:last-child p {
   margin-left: 10px; 
   font-size: 16px;
   font-weight: bold; 
 }
 
-.header div:last-child p {
-  margin-left: 10px; 
-  font-size: 16px;
-  font-weight: bold;
+.header div:last-child {
+  align-items: flex-start; /* To align the button under the completed tasks counter */
 }
 
 .header p {
@@ -41,7 +41,6 @@
 }
 
 .header span {
-  
   padding: 2px 9px;
   border-radius: 999px;
   font-size: 13px;
@@ -52,4 +51,107 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+ margin-bottom: 20px; /* Adjust the value as needed for more or less space */
+  
+}
+
+.deleteAll, .completeAll {
+  margin-top: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #f87c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: 48%;
+}
+
+.deleteAll:hover, .completeAll:hover {
+  background-color: #e36b00;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.modal-overlay.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f87c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+  background-color: #e36b00;
+}
+
+/* Ensure modal text stays black regardless of theme */
+.modal-content h3 {
+  color: black !important; /* Force the text color to stay black */
+}
+
+.modal-content p {
+  color: black !important; /* Optional: if there's any other text you want to ensure stays black */
+}
+
+
+/* Make buttons shorter by adjusting padding or width */
+.completeAll, .deleteAll {
+  padding: 8px 16px;  /* Reduce padding for smaller buttons */
+  font-size: 14px;    /* Adjust font size if needed */
+  width: auto;        /* Let the button's width adjust to the content */
+}
+
+/* Optionally, set a max width to avoid the buttons being too wide */
+.completeAll, .deleteAll {
+  max-width: 200px; /* You can adjust this value as needed */
+}
+
+.completeAll {
+  margin-left: 10px; /* Adjust the value as needed */
 }

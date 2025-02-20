@@ -76,6 +76,18 @@ function App() {
     toast.success("Task edited successfully!");  
   }
 
+  // Complete or toggle all tasks
+  function completeAllTasks(newTasks) {
+    setTasksAndSave(newTasks);
+    toast.info("All tasks have been completed!");
+  }
+
+  // Delete all tasks
+  function deleteAllTasks() {
+    setTasksAndSave([]);
+    toast.error("All tasks deleted successfully!");
+  }
+
   return (
     <>
       <Header 
@@ -83,21 +95,24 @@ function App() {
         theme={theme} 
         setTheme={setTheme} 
       />
+
       <Tasks
         tasks={tasks}
         onDelete={deleteTaskById}
         onComplete={toggleTaskCompletedById}
         onEdit={editTaskById}
+        onCompleteAll={completeAllTasks}
+        onDeleteAll={deleteAllTasks}
       />
-      <ToastContainer
-      position="bottom-right"
-      autoClose={3000} 
-      hideProgressBar={false}  
-      newestOnTop={false}  
-      closeOnClick={true}  
-      rtl={false}  
-/>
 
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000} 
+        hideProgressBar={false}  
+        newestOnTop={false}  
+        closeOnClick={true}  
+        rtl={false}  
+      />
     </>
   );
 }
